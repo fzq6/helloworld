@@ -8,7 +8,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: echo "#!/bin/bash" >> jb.sh
-      - run: echo " touch Dockerfile" >> jb.sh
+      - run: echo "touch Dockerfile" >> jb.sh
       - run: echo "echo FROM  centos >> Dockerfile" >> jb.sh 
       - run: echo "docker build -f Dockerfile -t helloworld:1.0  ." >> jb.sh 
       - run: echo "docker run --name=helloworld helloworld:1.0" >> jb.sh
@@ -18,5 +18,5 @@ jobs:
       - name: List files in the repository
       - name: List files in the repository
         run: |
-          sh ./jd.sh
+          ls ${{ github.workspace }} 
       - run: echo "🍏 This job's status is ${{ job.status }}."
