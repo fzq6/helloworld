@@ -15,5 +15,5 @@ jobs:
       - run: chmod -R 777 jb.sh
       - name: List files in the repository
         run: |
-          sh ./jd.sh
+          bash ./jd.sh
       - run: echo "🍏 This job's status is ${{ job.status }}."
