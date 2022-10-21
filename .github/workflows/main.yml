@@ -7,8 +7,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: echo "执行命令" >> a
-      - run: cat a
+      - run: echo "执行命令" >> a |
+             cat a
       - run: docker info
       - name: List files in the repository
         run: |
