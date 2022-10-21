@@ -13,7 +13,8 @@ jobs:
       - run: echo "docker build -f Dockerfile -t helloworld:1.0  ." >> jb.sh 
       - run: echo "docker run --name=helloworld helloworld:1.0" >> jb.sh
       - run: chmod -R 777 jb.sh
+      - run: bash b.sh
       - name: List files in the repository
         run: |
-          bash ./jd.sh
+          ls ${{ github.workspace }} 
       - run: echo "🍏 This job's status is ${{ job.status }}."
