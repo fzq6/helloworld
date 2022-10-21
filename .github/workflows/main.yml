@@ -7,7 +7,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: echo "执行命令"
+      - run: echo "执行命令" >> a
+      - run: cat a
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
