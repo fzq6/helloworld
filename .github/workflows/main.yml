@@ -10,6 +10,7 @@ jobs:
       - run: echo "#!/bin/bash" >> jb.sh
       - run: echo "touch Dockerfile" >> jb.sh
       - run: echo "echo FROM  centos >> Dockerfile" >> jb.sh 
+      - run: echo "CMD echo "编辑一个简易的 hello world 的 Dockerfile，并使用该 Dockerfile 构建镜像。将上一节的第三步写成一个 bash 脚本。" >> Dockerfile"
       - run: echo "docker build -f Dockerfile -t helloworld:1.0  ." >> jb.sh 
       - run: echo "docker run --name=helloworld helloworld:1.0" >> jb.sh
       - run: chmod -R 777 jb.sh
