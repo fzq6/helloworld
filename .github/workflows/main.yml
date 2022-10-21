@@ -13,7 +13,6 @@ jobs:
       - run: echo "docker build -f Dockerfile -t helloworld:1.0  ." >> jb.sh 
       - run: echo "docker run --name=helloworld helloworld:1.0" >> jb.sh
       - run: chmod -R 777 jb.sh
-      - run: sh jd.sh
       - run: docker logs helloworld
       - run: docker ps -a
       - name: List files in the repository
