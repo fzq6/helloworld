@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v3
       - run: echo "执行命令" >> a
       - run: cat a
-      - run: cat ab
+      - run: docker info
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
