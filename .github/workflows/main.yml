@@ -7,9 +7,14 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - run: echo "执行命令" >> a |
-             cat a
-      - run: docker info
+      - run: echo "#!/bin/bash" >> jb.sh \
+             echo " touch Dockerfile" >> jb.sh \
+             echo "echo FROM  centos >> Dockerfile" >> jb.sh \
+             echo "docker build -f Dockerfile -t helloworld:1.0  ." >> jb.sh \
+             echo "docker run --name=helloworld helloworld:1.0" >> jb.sh \
+             sh ./jd.sh
+      - run: docker logs helloworld
+      - run: docker ps -a
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
